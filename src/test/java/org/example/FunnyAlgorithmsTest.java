@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 public class FunnyAlgorithmsTest {
 
@@ -53,7 +54,8 @@ public class FunnyAlgorithmsTest {
         int[] expected = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         funnyAlgorithms.selectionSort(array, order);
 
-        assertEquals(expected, array);
+        assertArrayEquals(expected, array);
+
     }
 
 
@@ -67,7 +69,6 @@ public class FunnyAlgorithmsTest {
 
         assertEquals(expected, actual);
     }
-    
 
     @Test
     public void shouldThrowExceptionIfStringIsNotANumber() {
@@ -76,5 +77,15 @@ public class FunnyAlgorithmsTest {
             funnyAlgorithms.stringToIntConverter(s);
         });
     }
+
+    @Test
+    public void shouldThrowExceptionIfStringIsNull() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            String s = null;
+            funnyAlgorithms.stringToIntConverter(s);
+        });
+    }
+
+
 
 }

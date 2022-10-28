@@ -51,7 +51,7 @@ public class FunnyAlgorithms {
 		for (int i = 0; i < array.length - 2; i++) {
 			int min = i;
 			for (int j = i + 1; j < array.length; j++) {
-				boolean orderCondition = order == 0 ? array[j] > array[min] : array[j] < array[min];
+				boolean orderCondition = order == 1 ? array[j] > array[min] : array[j] < array[min];
 				if (orderCondition) {
 					min = j;
 				}
@@ -59,6 +59,7 @@ public class FunnyAlgorithms {
 			swap(array, min, i);
 		}
 	}
+
 
 	/**
 	 * Il metodo accetta una stringa e la converte in un numero intero

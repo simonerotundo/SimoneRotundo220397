@@ -86,6 +86,12 @@ public class FunnyAlgorithmsTest {
         });
     }
 
-
+    @Test
+    public void shouldThrowExceptionIfRealNumberIsPassed() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            String s = "123.45";
+            funnyAlgorithms.stringToIntConverter(s);
+        });
+    }
 
 }

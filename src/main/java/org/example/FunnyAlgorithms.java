@@ -61,7 +61,7 @@ public class FunnyAlgorithms {
 	}
 
 	/**
-	 * Il metodo deve accettare una stringa e convertirla in un numero intero 
+	 * Il metodo accetta una stringa e la converte in un numero intero
 	 * Le stringhe ben formate non contengono caratteri diversi da numeri, spazi finali e meno 
 	 * Il numero rappresentato deve essere compreso nell'intervallo [-32768, 32767], eccezione in caso contrario 
 	 * Non sono ammessi numeri reali
@@ -70,23 +70,18 @@ public class FunnyAlgorithms {
 	 * @return string number converted into integer
 	 * @throws UnsupportedOperationException
 	 */
-	public static int stringToIntConverter(String number) throws UnsupportedOperationException {
+	public int stringToIntConverter(String number) throws UnsupportedOperationException {
 
-		// converto il numero in intero
 		int stringToInteger = Integer.parseInt(number);
 
-		// verifico che la stringa sia ben formata
-		//if(!number.matches("-?\\d+(\\.\\d+)?")) {
-		if(!number.matches("-?\\d+(\\.\\d+)?")) {
+		if(!number.matches("-?\\d+")) {
 			throw new UnsupportedOperationException("La stringa non è ben formata.");
 		}
 
-		// verifico che il numero sia compreso nell'intervallo [-32768, 32767]
 		if (stringToInteger < -32768 || stringToInteger > 32767) {
 			throw new UnsupportedOperationException("Il numero deve essere compreso nell'intervallo [-32768, 32767]");
 		}
 
-		// verifico che il numero non sia reale
 		if (number.contains(".")) {
 			throw new UnsupportedOperationException("Non sono ammessi numeri reali.");
 		}

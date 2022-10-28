@@ -1,11 +1,18 @@
 package org.example;
 
+import org.junit.jupiter.api.Assertions;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static junit.framework.Assert.assertEquals;
 
 public class FunnyAlgorithmsTest {
 
-    FunnyAlgorithms funnyAlgorithms = new FunnyAlgorithms();
+    private static FunnyAlgorithms funnyAlgorithms = null;
+
+    @BeforeClass
+    public static void setUp() {
+        funnyAlgorithms = new FunnyAlgorithms();
+    }
 
 
     /* BINARY SEARCH */
@@ -59,6 +66,15 @@ public class FunnyAlgorithmsTest {
         int actual = funnyAlgorithms.stringToIntConverter(s);
 
         assertEquals(expected, actual);
+    }
+    
+
+    @Test
+    public void shouldThrowExceptionIfStringIsNotANumber() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            String s = "abc";
+            funnyAlgorithms.stringToIntConverter(s);
+        });
     }
 
 }

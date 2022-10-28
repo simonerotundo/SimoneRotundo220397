@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static junit.framework.Assert.assertEquals;
@@ -11,6 +12,7 @@ public class FunnyAlgorithmsTest {
     private static FunnyAlgorithms funnyAlgorithms = null;
 
     @BeforeClass
+    @DisplayName("Test setup")
     public static void setUp() {
         funnyAlgorithms = new FunnyAlgorithms();
     }
@@ -18,6 +20,7 @@ public class FunnyAlgorithmsTest {
 
     /* BINARY SEARCH */
     @Test
+    @DisplayName("Binary Search Test")
     public void shouldReturnMinusOneIfTargetDoesntExist() {
         int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         int target = 10;
@@ -31,6 +34,7 @@ public class FunnyAlgorithmsTest {
 
     /* SWAP */
     @Test
+    @DisplayName("Swap Test")
     public void shouldSwapTwoElements() {
         int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         int i = 0;
@@ -47,6 +51,7 @@ public class FunnyAlgorithmsTest {
 
     /* SELECTION SORT */
     @Test
+    @DisplayName("Selection Sort Test")
     public void shouldSortArrayInAscendingOrder() {
         int[] array = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
         int order = 0;
@@ -59,8 +64,10 @@ public class FunnyAlgorithmsTest {
     }
 
 
+
     /* STRING TO INT */
     @Test
+    @DisplayName("String to Int Test")
     public void stringToIntTest() {
         String s = "123";
 
@@ -71,6 +78,7 @@ public class FunnyAlgorithmsTest {
     }
 
     @Test
+    @DisplayName("String to Int Test")
     public void shouldThrowExceptionIfStringIsNotANumber() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             String s = "abc";
@@ -79,6 +87,7 @@ public class FunnyAlgorithmsTest {
     }
 
     @Test
+    @DisplayName("String to Int Test")
     public void shouldThrowExceptionIfStringIsNull() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             String s = null;
@@ -87,6 +96,7 @@ public class FunnyAlgorithmsTest {
     }
 
     @Test
+    @DisplayName("String to Int Test")
     public void shouldThrowExceptionIfRealNumberIsPassed() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             String s = "123.45";

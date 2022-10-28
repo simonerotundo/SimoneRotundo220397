@@ -10,7 +10,7 @@ public class FunnyAlgorithms {
 	 * @param target Number to be found in the array
 	 * @return Index of target in nums array, -1 otherwise
 	 */
-	public static int binarySearch(int[] nums, int target) {
+	public int binarySearch(int[] nums, int target) {
 		int left = 1, right = nums.length - 2;
 
 		while (left <= right) {
@@ -34,6 +34,7 @@ public class FunnyAlgorithms {
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
+
 
 	/**
 	 * Traditional Selection Sort
@@ -69,7 +70,7 @@ public class FunnyAlgorithms {
 	 * @return string number converted into integer
 	 * @throws UnsupportedOperationException
 	 */
-	public int stringToIntConverter(String number) throws UnsupportedOperationException {
+	public static int stringToIntConverter(String number) throws UnsupportedOperationException {
 
 		// converto il numero in intero
 		int stringToInteger = Integer.parseInt(number);

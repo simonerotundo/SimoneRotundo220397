@@ -5,15 +5,14 @@ import static junit.framework.Assert.assertEquals;
 
 public class FunnyAlgorithmsTest {
 
-    /*
     @Test
-    public void testBinarySearch() {
-        int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        int target = 5;
-        int expected = 4;
-        int actual = FunnyAlgorithms.binarySearch(nums, target);
+    public void stringToIntTest() {
+        String s = "123";
+
+        int expected = 123;
+        int actual = FunnyAlgorithms.stringToIntConverter(s);
+
         assertEquals(expected, actual);
     }
-    */
 
 }
